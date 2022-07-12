@@ -122,6 +122,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
 # Target: Client Server
 FROM production AS clientserver
 COPY --from=builder /learninglocker/ui/dist/server /learninglocker/server
+COPY --from=builder /learninglocker/ui/dist/public /learninglocker/public
 
 # Target: CLI Utilities
 FROM production AS cli
