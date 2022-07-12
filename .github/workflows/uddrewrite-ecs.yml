@@ -41,15 +41,17 @@ jobs:
         ECR_REGISTRY: 684381864438.dkr.ecr.eu-west-1.amazonaws.com
         ECR_REPOSITORY: learninglocker
         IMAGE_TAG: latest
+        DATABASE_TLS_CERTIFICATE: ${{ secrets.DATABASE_TLS_CERTIFICATE }}
       run: |
         touch .env
+        cat 
         docker-compose -f "docker-compose.yml" build --build-arg APP_VERSION=$APP_VERSION 
         docker tag learninglocker_api $ECR_REGISTRY/${ECR_REPOSITORY}-api-uddrewrite:latest
         docker tag learninglocker_clientserver $ECR_REGISTRY/${ECR_REPOSITORY}-clientserver-uddrewrite:latest
         docker tag learninglocker_worker $ECR_REGISTRY/${ECR_REPOSITORY}-worker-uddrewrite:latest
         docker tag learninglocker_cli $ECR_REGISTRY/${ECR_REPOSITORY}-cli-uddrewrite:latest
         docker tag learninglocker_nginx $ECR_REGISTRY/${ECR_REPOSITORY}-nginx-uddrewrite:latest
-        docker tag learninglocker_scheduler $ECR_REGISTRY/${ECR_REPOSITORY}-scheduler-uddrewritex:latest
+        docker tag learninglocker_scheduler $ECR_REGISTRY/${ECR_REPOSITORY}-scheduler-uddrewrite:latest
 
         docker push $ECR_REGISTRY/${ECR_REPOSITORY}-api-uddrewrite:latest
         echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-api:$IMAGE_TAG"
@@ -66,7 +68,7 @@ jobs:
         docker push $ECR_REGISTRY/${ECR_REPOSITORY}-nginx-uddrewrite:latest
         echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-nginx-uddrewrite:$IMAGE_TAG"
 
-        docker push $ECR_REGISTRY/${ECR_REPOSITORY}-scheduler-uddrewritex:latest
+        docker push $ECR_REGISTRY/${ECR_REPOSITORY}-scheduler-uddrewrite:latest
         echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-scheduler-uddrewrite:$IMAGE_TAG"
 
     - name: Deploy image to ECS
