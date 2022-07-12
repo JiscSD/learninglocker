@@ -1,3 +1,10 @@
+on:
+  workflow_dispatch:
+    inputs:
+      hotfix:
+        required: true
+        default: "No"
+
 name: Deploy to uddrewrite ECS
 
 jobs:
