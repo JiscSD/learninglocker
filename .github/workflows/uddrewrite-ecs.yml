@@ -48,7 +48,7 @@ jobs:
         docker tag learninglocker_clientserver $ECR_REGISTRY/${ECR_REPOSITORY}-clientserver-uddrewrite:latest
         docker tag learninglocker_worker $ECR_REGISTRY/${ECR_REPOSITORY}-worker-uddrewrite:latest
         docker tag learninglocker_cli $ECR_REGISTRY/${ECR_REPOSITORY}-cli-uddrewrite:latest
-        docker tag learninglocker_nginx $ECR_REGISTRY/${ECR_REPOSITORY}-nginx-uddrewritex:latest
+        docker tag learninglocker_nginx $ECR_REGISTRY/${ECR_REPOSITORY}-nginx-uddrewrite:latest
         docker tag learninglocker_scheduler $ECR_REGISTRY/${ECR_REPOSITORY}-scheduler-uddrewritex:latest
 
         docker push $ECR_REGISTRY/${ECR_REPOSITORY}-api-uddrewrite:latest
@@ -58,7 +58,7 @@ jobs:
         echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-clientserver-uddrewrite:$IMAGE_TAG"
 
         docker push $ECR_REGISTRY/${ECR_REPOSITORY}-worker-uddrewrite:latest
-        echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-worke-uddrewriter:$IMAGE_TAG"
+        echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-worker-uddrewriter:$IMAGE_TAG"
 
         docker push $ECR_REGISTRY/${ECR_REPOSITORY}-cli-uddrewrite:latest
         echo "::set-output name=image::$ECR_REGISTRY/${ECR_REPOSITORY}-cli-uddrewrite:$IMAGE_TAG"
