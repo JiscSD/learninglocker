@@ -20,9 +20,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Check ${{github.ref}} is up-to-date with Main
+    - name: Check ${{github.ref}} is up-to-date with Master
       if: github.event.inputs.hotfix == 'No'
-      run: git config user.email "github@jisc.ac.uk" && git config user.name "GitHub Actions" && git merge origin/main
+      run: git config user.email "github@jisc.ac.uk" && git config user.name "GitHub Actions" && git merge origin/master
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
