@@ -42,6 +42,7 @@ jobs:
         ECR_REPOSITORY: learninglocker
         IMAGE_TAG: latest
       run: |
+        touch .env
         docker-compose -f "docker-compose.yml" build --build-arg APP_VERSION=$APP_VERSION 
         docker tag learninglocker_api $ECR_REGISTRY/${ECR_REPOSITORY}-api-uddrewrite:latest
         docker tag learninglocker_clientserver $ECR_REGISTRY/${ECR_REPOSITORY}-clientserver-uddrewrite:latest
