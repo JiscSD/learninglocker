@@ -81,7 +81,7 @@
     "faker": "^3.0.1",
     "fast-csv": "^3.7.0",
     "file-loader": "^0.8.5",
-    "file-stream-rotator": "^0.0.6",
+    "file-stream-rotator": "^0.6.1",
     "git-rev": "^0.2.1",
     "helmet": "^2.1.1",
     "highland": "^2.8.1",
