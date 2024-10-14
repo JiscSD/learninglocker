@@ -67,7 +67,7 @@
     "body-parser": "^1.14.1",
     "boolean": "^0.1.0",
     "btoa": "^1.1.2",
-    "bull": "^3.3.10",
+    "bull": "^3.29.3",
     "chai-fs": "1.0.*",
     "clamscan": "^0.8.4",
     "classnames": "^2.2.5",
