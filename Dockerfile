@@ -141,6 +141,6 @@ FROM production AS worker
 COPY --from=builder /learninglocker/worker/dist/server /learninglocker/server
 
 # Target: Nginx
-FROM nginx:1.22 AS nginx
+FROM nginx:1.26.2 AS nginx
 COPY --from=builder /learninglocker/ui/dist/public /learninglocker/public
 COPY nginx.conf.example /etc/nginx/conf.d/default.conf
